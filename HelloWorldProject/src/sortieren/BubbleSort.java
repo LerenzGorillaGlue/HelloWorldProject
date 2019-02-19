@@ -15,6 +15,7 @@ public class BubbleSort {
 		    } // Ende innere for-Schleife
 		  } // Ende äußere for-Schleife
 		//
+		//
 		for (int i : zahlen)
 			System.out.println(i);
 	}
