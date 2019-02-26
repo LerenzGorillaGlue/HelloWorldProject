@@ -1,23 +1,28 @@
-package sortieren;
+package rekursion;
 
-public class BubbleSort {
+public class Methoden{
+	
+	
+	public static void main(String[] args)
+	spezielleMethode();
+	spezielleMethode();
+	spezielleMethode();
+	
 
-	public static void main(String[] args) {
-		int[] zahlen = { 3, 1, 9, 5, 2, 8, 6, 5 };
-		//
-		for (int n=zahlen.length; n>1; --n){
-		    for (int i=0; i<n-1; ++i){
-		      if (zahlen[i] > zahlen[i+1]){
-		    	  int help = zahlen[i];
-		    	  zahlen[i] = zahlen[i+1];
-		    	  zahlen[i+1] = help;
-		      } // Ende if
-		    } // Ende innere for-Schleife
-		  } // Ende äußere for-Schleife
-		//
-		//
-		for (int i : zahlen)
-			System.out.println(i);
-	}
-
+	for (int i=0;i<10;i++)
+		spezielleMethode();
+	 addiere(10,5);
+	 System.out.println(mult(8,7));
+	
+}
+public static void spezielleMethode() {
+	System.out.println("Ich bin speziell.");
+}
+public static void addiere(int zahlA,int zahlB) {
+	System.out.println(zahlA + zahlB);
+}
+public static int mult(int zahlA, int zahlB) {
+	int ergebnis = zahlA * zahlB;
+	return ergebnis;
+}
 }

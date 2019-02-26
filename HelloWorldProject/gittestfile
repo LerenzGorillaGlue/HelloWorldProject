@@ -1,1 +1,23 @@
-Friedrich Reichhart
+package rekursion;
+
+public class Methoden{
+	//main Methode- ist die Methode
+	//die beim Start des Programms/der
+	//aufgerufen wird
+	public static void main(String[] args)
+	spezielleMethode();
+	spezielleMethode();
+	spezielleMethode();
+	
+
+	for (int i=0;i<10;i++)
+		spezielleMethode();
+	 addiere(10,5);
+	
+}
+public static void spezielleMethode() {
+	System.out.println("Ich bin speziell.");
+}
+public static void addiere(int zahlA,int zahlB) {
+	System.out.println(zahlA + zahlB);
+}
