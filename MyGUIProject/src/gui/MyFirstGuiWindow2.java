@@ -23,6 +23,12 @@ public class MyFirstGuiWindow2 {
 	private Text HausnummerTF;
 	private Text PLZTF;
 	private Text OrtTF;
+	private Label VornameTFout;
+	private Label NachnameTFout;
+	private Label StrasseTFout;
+	private Label HausnummerTFout;
+	private Label PLZTFout;
+	private Label OrtTFout;
 
 	/**
 	 * Launch the application.
@@ -70,22 +76,35 @@ public class MyFirstGuiWindow2 {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				System.out.println("Knoppe gedrückt");
-				System.out.println(vornameTF.getText());
-				System.out.println(NachnameTF.getText());
-				System.out.println(StrasseTF.getText());
-				System.out.println(HausnummerTF.getText());
-				System.out.println(PLZTF.getText());
-				System.out.println(OrtTF.getText());
-				
-			
-			
+				//System.out.println(vornameTF.getText());
+				//System.out.println(NachnameTF.getText());
+				//System.out.println(StrasseTF.getText());
+				//System.out.println(HausnummerTF.getText());
+				//System.out.println(PLZTF.getText());
+				//System.out.println(OrtTF.getText());
+	
+		System.out.println(getVornameTF().getText());
+		System.out.println(getNachnameTF().getText());
+		System.out.println(getStrasseTF().getText());
+		System.out.println(getHausnummerTF().getText());
+		System.out.println(getPLZTF().getText());
+		System.out.println(getOrtTF().getText());
+		
+		
+		
+		getVornameTFout().setText(getVornameTF().getText());
+		getNachnameTFout().setText(getNachnameTF().getText());
+		getStrasseTFout().setText(getStrasseTF().getText());
+		getHausnummerTFout().setText(getHausnummerTF().getText());
+		getPLZTFout().setText(getPLZTF().getText());
+		getOrtTFout().setText(getOrtTF().getText());
 			}
 		});
 		btnMybutton.setBounds(10, 10, 75, 25);
 		btnMybutton.setText("MyButton");
 		
 		vornameTF = new Text(shlFrwindow, SWT.BORDER);
-		vornameTF.setBounds(100, 41, 131, 21);
+		vornameTF.setBounds(100, 41, 86, 21);
 		
 		Label vornameL = new Label(shlFrwindow, SWT.NONE);
 		vornameL.setBounds(10, 44, 55, 15);
@@ -100,17 +119,17 @@ public class MyFirstGuiWindow2 {
 		lblStrasse.setText("Strasse");
 		
 		NachnameTF = new Text(shlFrwindow, SWT.BORDER);
-		NachnameTF.setBounds(100, 88, 131, 21);
+		NachnameTF.setBounds(100, 88, 86, 21);
 		
 		StrasseTF = new Text(shlFrwindow, SWT.BORDER);
-		StrasseTF.setBounds(100, 126, 131, 21);
+		StrasseTF.setBounds(100, 126, 86, 21);
 		
 		Label lblHausnummer = new Label(shlFrwindow, SWT.NONE);
 		lblHausnummer.setBounds(10, 173, 86, 15);
 		lblHausnummer.setText("Hausnummer");
 		
 		HausnummerTF = new Text(shlFrwindow, SWT.BORDER);
-		HausnummerTF.setBounds(113, 167, 131, 21);
+		HausnummerTF.setBounds(100, 167, 86, 21);
 		
 		Label lblPlz = new Label(shlFrwindow, SWT.NONE);
 		lblPlz.setBounds(10, 206, 55, 15);
@@ -121,10 +140,10 @@ public class MyFirstGuiWindow2 {
 		lblOrt.setText("Ort");
 		
 		PLZTF = new Text(shlFrwindow, SWT.BORDER);
-		PLZTF.setBounds(100, 200, 131, 21);
+		PLZTF.setBounds(100, 203, 86, 21);
 		
 		OrtTF = new Text(shlFrwindow, SWT.BORDER);
-		OrtTF.setBounds(94, 230, 137, 21);
+		OrtTF.setBounds(100, 230, 86, 21);
 		
 		Button btnAbbrechen = new Button(shlFrwindow, SWT.NONE);
 		btnAbbrechen.setBackground(SWTResourceManager.getColor(255, 0, 0));
@@ -138,15 +157,70 @@ public class MyFirstGuiWindow2 {
 		btnAbbrechen.setText("Abbrechen");
 		
 		Composite composite = new Composite(shlFrwindow, SWT.NONE);
+		composite.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_RED));
 		composite.addMouseMoveListener(new MouseMoveListener() {
 			public void mouseMove(MouseEvent me) {
 				System.out.println(me.x + "/" + me.y);
 			}
 			
 		});
-		composite.setBackground(SWTResourceManager.getColor(0, 0, 0));
+		composite.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_RED));
 		composite.setBounds(300, 80, 124, 129);
+		
+		VornameTFout = new Label(shlFrwindow, SWT.NONE);
+		VornameTFout.setBounds(201, 44, 75, 15);
+		
+		NachnameTFout = new Label(shlFrwindow, SWT.NONE);
+		NachnameTFout.setBounds(201, 94, 75, 15);
+		
+		StrasseTFout = new Label(shlFrwindow, SWT.NONE);
+		StrasseTFout.setBounds(201, 129, 55, 15);
+		
+		HausnummerTFout = new Label(shlFrwindow, SWT.NONE);
+		HausnummerTFout.setBounds(201, 173, 55, 15);
+		
+		PLZTFout = new Label(shlFrwindow, SWT.NONE);
+		PLZTFout.setBounds(201, 206, 55, 15);
+		
+		OrtTFout = new Label(shlFrwindow, SWT.NONE);
+		OrtTFout.setBounds(201, 236, 55, 15);
 		shlFrwindow.setTabList(new Control[]{vornameTF, NachnameTF, StrasseTF, HausnummerTF, PLZTF, OrtTF, btnMybutton});
 
+	}
+	public Text getVornameTF() {
+		return vornameTF;
+	}
+	public Text getNachnameTF() {
+		return NachnameTF;
+	}
+	public Label getVornameTFout() {
+		return VornameTFout;
+	}
+	public Label getNachnameTFout() {
+		return NachnameTFout;
+	}
+	public Label getStrasseTFout() {
+		return StrasseTFout;
+	}
+	public Label getHausnummerTFout() {
+		return HausnummerTFout;
+	}
+	public Label getPLZTFout() {
+		return PLZTFout;
+	}
+	public Label getOrtTFout() {
+		return OrtTFout;
+	}
+	public Text getStrasseTF() {
+		return StrasseTF;
+	}
+	public Text getHausnummerTF() {
+		return HausnummerTF;
+	}
+	public Text getPLZTF() {
+		return PLZTF;
+	}
+	public Text getOrtTF() {
+		return OrtTF;
 	}
 }
