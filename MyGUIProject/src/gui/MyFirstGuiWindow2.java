@@ -9,6 +9,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import data.Person;
+
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -92,13 +95,38 @@ public class MyFirstGuiWindow2 {
 		
 		
 		
-		getVornameTFout().setText(getVornameTF().getText());
-		getNachnameTFout().setText(getNachnameTF().getText());
-		getStrasseTFout().setText(getStrasseTF().getText());
-		getHausnummerTFout().setText(getHausnummerTF().getText());
-		getPLZTFout().setText(getPLZTF().getText());
-		getOrtTFout().setText(getOrtTF().getText());
+       //
+		
+		Person p1;
+		p1 = new Person() ;
+		
+		p1.setVorname(getVornameTF().getText());
+		p1.setNachname(getNachnameTF().getText());
+		p1.setHausnummer(getHausnummerTF().getText());
+		p1.setOrt(getOrtTF().getText());
+		p1.setPlz(getPLZTF().getText());
+		p1.setStrasse(getStrasseTF().getText());
+		
+		System.out.println(p1);
+		//
+		Person.getListe().add(p1);
+		//
+		System.out.println(Person.getListe());
+		//
+		getVornameTF().setText("");
+		getHausnummerTF().setText("");
+		getNachnameTF().setText("");
+		getOrtTF().setText("");
+		getStrasseTF().setText("");
+		getPLZTF().setText("");
+		
+			
+			
+			
+			
 			}
+			
+			
 		});
 		btnMybutton.setBounds(10, 10, 75, 25);
 		btnMybutton.setText("MyButton");

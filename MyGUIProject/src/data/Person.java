@@ -1,7 +1,11 @@
 package data;
 
+import java.util.ArrayList;
 
 public class Person{
+	//
+	private static ArrayList<Person> liste = new ArrayList<Person>();
+	//
 	private String vorname;
 	private String nachname;
 	private String strasse;
@@ -44,5 +48,11 @@ public class Person{
 	}
 	public void setHausnummer(String hausnummer) {
 		this.hausnummer = hausnummer;
+	}
+	public String toString() {
+		return getNachname() + " , " + getVorname();
+	}
+	public static ArrayList<Person> getListe() {
+		return liste;
 	}
 }
