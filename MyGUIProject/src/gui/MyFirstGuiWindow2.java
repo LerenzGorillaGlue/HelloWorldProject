@@ -6,8 +6,12 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -241,17 +245,42 @@ public class MyFirstGuiWindow2 {
 		});
 		btnJson.setBounds(300, 10, 75, 25);
 		btnJson.setText("JSON");
-		
+
 		Button btnLoad = new Button(shlFrwindow, SWT.NONE);
 		btnLoad.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				FileDialog fd = new FilDialog (shlFrwindow, SWT.OPEN );
-				
-				fd.setFilterExtensions(new String[] {"humptydumpty");
-				
-				
-				
+				FileDialog fd = new FileDialog(shlFrwindow, SWT.OPEN);
+
+				fd.setFilterExtensions(new String[] { "*.humptydumpty" });
+				fd.setFilterPath("%TEMP%");
+
+				String filename = fd.open();
+
+				System.out.println(filename);
+
+				if (filename != null) {
+
+					FileReader fr;
+					try {
+						fr = new FileReader(filename);
+						Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+						Person[] personen = gson.fromJson(fr, Person[].class);
+
+						ArrayList<Person> personListe = new ArrayList<Person>(Arrays.asList(personen));
+
+						System.out.println(personListe);
+						
+						Person.setListe(personListe);
+
+					} catch (FileNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
+				}
+
 			}
 		});
 		btnLoad.setBounds(412, 10, 75, 25);
