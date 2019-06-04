@@ -1,6 +1,7 @@
 package gui;
 
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
 
@@ -245,7 +246,12 @@ public class MyFirstGuiWindow2 {
 		btnLoad.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				FileDialog fd = new FilDialog (shlFrwindow; )
+				FileDialog fd = new FilDialog (shlFrwindow, SWT.OPEN );
+				
+				fd.setFilterExtensions(new String[] {"humptydumpty");
+				
+				
+				
 			}
 		});
 		btnLoad.setBounds(412, 10, 75, 25);
